@@ -12,6 +12,11 @@ This project allows you to **mark attendance, store records in CSV, and view the
 - ✅ **Lightweight GUI** using Tkinter.
 
 ## 🛠️ Tech Stack
-- **Python 3.x**
+- **Python**
 - **Tkinter** (GUI framework)
 - **Pandas** (CSV handling)
+
+## 📂 Project Code
+
+You can view the full source code here:  
+[attendance management system.py](https://github.com/Dhaathri/Attendance-management-system/blob/main/attendance%20management%20system.py)
