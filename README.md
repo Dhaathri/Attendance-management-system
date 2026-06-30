@@ -31,7 +31,3 @@ You can view the full source code here:
 
 ### Attendance Records
 ![Attendance Records](https://github.com/Dhaathri/Attendance-management-system/blob/main/attendance%20records.png)
-
-### Mark Attendance Form
-![Mark Attendance Form](https://github.com/Dhaathri/Attendance-management-system/blob/main/mark%20attendance.png)
-
