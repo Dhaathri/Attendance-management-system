@@ -17,7 +17,7 @@ def mark_attendance():
     status = status_var.get()
 
     if not name or not date:
-        messagebox.showwarning("Warning", "Please fill all fields!")
+        messagebox.showerror("ERROR", "Please fill all fields!")
         return
 
     new_record = pd.DataFrame({
@@ -26,12 +26,12 @@ def mark_attendance():
         "Status": [status]
     })
 
-    df = pd.read_csv(FILE_NAME)
-    df = pd.concat([df, new_record], ignore_index=True)
-    df.to_csv(FILE_NAME, index=False)
+    df = pd.read_csv(FILE_NAME)#existing csv to df
+    df = pd.concat([df, new_record], ignore_index=True)#adding new records without indexes
+    df.to_csv(FILE_NAME, index=False)#df to csv
 
     messagebox.showinfo("Success", "Attendance Marked Successfully!")
-
+#resetting the inputs for next record
     name_entry.delete(0, tk.END)
     date_entry.delete(0, tk.END)
 
@@ -39,10 +39,12 @@ def mark_attendance():
 def view_attendance():
     df = pd.read_csv(FILE_NAME)
 
+    #new  window for attendance records
     view_window = tk.Toplevel(root)
     view_window.title("Attendance Records")
     view_window.geometry("500x300")
-
+    
+    #displaying data in table format in view_window
     tree = ttk.Treeview(
         view_window,
         columns=("Student", "Date", "Status"),
@@ -55,12 +57,9 @@ def view_attendance():
 
     tree.pack(fill="both", expand=True)
 
-    for _, row in df.iterrows():
-        tree.insert(
-            "",
-            tk.END,
-            values=(row["Student"], row["Date"], row["Status"])
-        )
+    for i in df.values.tolist():
+        tree.insert("", tk.END, values=i)
+
 
 
 # Main Window
@@ -93,18 +92,7 @@ ttk.Radiobutton(root, text="Present", variable=status_var, value="P").pack()
 ttk.Radiobutton(root, text="Absent", variable=status_var, value="A").pack()
 
 # Buttons
-tk.Button(
-    root,
-    text="Mark Attendance",
-    command=mark_attendance,
-    bg="lightgreen"
-).pack(pady=10)
-
-tk.Button(
-    root,
-    text="View Attendance",
-    command=view_attendance,
-    bg="lightblue"
-).pack()
+tk.Button(root,text="Mark Attendance",command=mark_attendance,bg="lightgreen").pack(pady=10)
+tk.Button(root,text="View Attendance",command=view_attendance,bg="lightblue").pack()
 
 root.mainloop()
