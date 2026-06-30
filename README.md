@@ -20,3 +20,18 @@ This project allows you to **mark attendance, store records in CSV, and view the
 
 You can view the full source code here:  
 [attendance management system.py](https://github.com/Dhaathri/Attendance-management-system/blob/main/attendance%20management%20system.py)
+
+
+##Screenshots
+
+## 📸 Screenshots
+
+### Main Window
+![Main Window](https://github.com/Dhaathri/Attendance-management-system/blob/main/main%20window.png)
+
+### Attendance Records
+![Attendance Records](https://github.com/Dhaathri/Attendance-management-system/blob/main/attendance%20records.png)
+
+### Mark Attendance Form
+![Mark Attendance Form](https://github.com/Dhaathri/Attendance-management-system/blob/main/mark%20attendance.png)
+
